@@ -1,0 +1,85 @@
+Certificate:
+    Data:
+        Version: 3 (0x2)
+        Serial Number: 0 (0x0)
+    Signature Algorithm: sha1WithRSAEncryption
+        Issuer: C=DE, ST=NRW, L=Bonn, O=Studentenwerk Bonn AoeR, CN=stw-bonn.de/emailAddress=netadmin@stw-bonn.de
+        Validity
+            Not Before: Apr  4 08:56:38 2014 GMT
+            Not After : Apr  1 08:56:38 2024 GMT
+        Subject: C=DE, ST=NRW, L=Bonn, O=Studentenwerk Bonn AoeR, CN=stw-bonn.de/emailAddress=netadmin@stw-bonn.de
+        Subject Public Key Info:
+            Public Key Algorithm: rsaEncryption
+                Public-Key: (2048 bit)
+                Modulus:
+                    00:d4:ee:79:b4:f2:00:12:0b:f2:af:64:11:15:9a:
+                    cd:24:90:76:05:54:8c:fc:fe:59:8e:84:40:c2:71:
+                    c6:ef:b7:0b:89:5c:b1:e8:15:ba:9c:6d:dc:f3:68:
+                    70:ac:61:5a:23:26:97:7d:bf:ed:e1:ae:ac:c6:0c:
+                    55:75:17:cf:09:b8:5c:21:e1:43:89:48:5c:21:a0:
+                    29:c7:da:9d:6f:a8:b6:f9:d7:2f:78:02:50:09:94:
+                    9c:a2:4f:a0:13:a7:3f:99:06:d4:6c:89:ac:bb:52:
+                    ac:25:4c:31:8a:e3:fa:94:0b:ff:19:dd:cf:55:37:
+                    dd:1f:da:5f:1d:53:a6:73:dd:c3:a6:31:ee:85:0f:
+                    e4:3f:b7:d2:4a:ea:9e:d0:e0:81:18:93:9f:d6:d0:
+                    68:3f:3d:49:3c:61:dc:d8:ae:92:2c:c3:04:e7:ea:
+                    55:25:39:48:3f:f5:bb:ac:09:2a:bc:33:43:3f:8a:
+                    c7:f8:70:04:09:0a:1f:da:29:71:29:49:4e:5a:a3:
+                    13:36:f9:9e:b6:e6:8b:2b:20:c6:17:da:d2:f2:b9:
+                    49:07:25:20:5a:2d:7a:58:e7:ee:ce:18:3c:f5:79:
+                    41:ac:3d:5c:7d:41:c6:be:cc:c2:d8:6f:d4:0a:07:
+                    e9:d2:46:6b:43:46:7c:1b:4c:8a:2c:25:de:88:6f:
+                    0e:c1
+                Exponent: 65537 (0x10001)
+        X509v3 extensions:
+            X509v3 Subject Key Identifier: 
+                A4:D8:25:79:23:7C:FE:29:49:1A:04:B6:1F:26:C9:DC:0B:6B:79:22
+            X509v3 Authority Key Identifier: 
+                keyid:A4:D8:25:79:23:7C:FE:29:49:1A:04:B6:1F:26:C9:DC:0B:6B:79:22
+                DirName:/C=DE/ST=NRW/L=Bonn/O=Studentenwerk Bonn AoeR/CN=stw-bonn.de/emailAddress=netadmin@stw-bonn.de
+                serial:00
+
+            X509v3 Basic Constraints: 
+                CA:TRUE
+    Signature Algorithm: sha1WithRSAEncryption
+         ca:80:dd:ba:b8:24:7b:b3:f1:df:71:91:8e:af:ce:bb:0f:df:
+         e3:8e:25:85:76:dd:fd:7c:85:4a:0d:ee:79:b3:70:fe:c4:c9:
+         0f:eb:b4:f7:d2:c4:23:be:86:42:e9:1e:81:d2:a9:a5:aa:03:
+         9b:30:2c:88:31:4e:72:8a:a3:34:13:8d:ed:59:0b:a3:b5:d7:
+         c0:1f:c8:f5:8d:c5:5d:12:18:bb:1f:b3:dc:3e:b2:5e:6f:7a:
+         2f:a8:bd:12:86:76:4f:ac:24:da:d2:0c:77:9b:a4:93:56:fd:
+         7b:82:6b:58:01:51:5f:97:6e:09:86:2a:d4:2c:bb:21:7f:10:
+         7c:2a:f3:b5:6f:37:7c:5d:01:93:23:bc:5b:a1:43:1e:59:0a:
+         af:ef:b3:c6:eb:c5:91:43:c0:ad:7c:9d:56:7c:b5:64:8e:82:
+         1b:2f:ba:a1:1d:36:be:4a:91:22:48:5a:2f:9a:a5:33:ee:a7:
+         1a:e5:26:65:ea:51:4a:a6:2e:bc:66:dc:48:3c:a1:97:c6:ad:
+         87:dc:e0:6b:b7:7a:61:c4:a8:8d:df:4e:1d:4a:44:79:dc:24:
+         16:05:c6:9c:b9:6b:6b:39:1d:c8:e7:60:e5:a7:01:eb:90:5f:
+         bc:3f:31:cb:ca:6b:ee:41:f3:0e:72:51:d8:18:b7:a9:1e:fe:
+         46:97:08:6c
+-----BEGIN CERTIFICATE-----
+MIIEczCCA1ugAwIBAgIBADANBgkqhkiG9w0BAQUFADCBhzELMAkGA1UEBhMCREUx
+DDAKBgNVBAgTA05SVzENMAsGA1UEBxMEQm9ubjEgMB4GA1UEChMXU3R1ZGVudGVu
+d2VyayBCb25uIEFvZVIxFDASBgNVBAMTC3N0dy1ib25uLmRlMSMwIQYJKoZIhvcN
+AQkBFhRuZXRhZG1pbkBzdHctYm9ubi5kZTAeFw0xNDA0MDQwODU2MzhaFw0yNDA0
+MDEwODU2MzhaMIGHMQswCQYDVQQGEwJERTEMMAoGA1UECBMDTlJXMQ0wCwYDVQQH
+EwRCb25uMSAwHgYDVQQKExdTdHVkZW50ZW53ZXJrIEJvbm4gQW9lUjEUMBIGA1UE
+AxMLc3R3LWJvbm4uZGUxIzAhBgkqhkiG9w0BCQEWFG5ldGFkbWluQHN0dy1ib25u
+LmRlMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA1O55tPIAEgvyr2QR
+FZrNJJB2BVSM/P5ZjoRAwnHG77cLiVyx6BW6nG3c82hwrGFaIyaXfb/t4a6sxgxV
+dRfPCbhcIeFDiUhcIaApx9qdb6i2+dcveAJQCZScok+gE6c/mQbUbImsu1KsJUwx
+iuP6lAv/Gd3PVTfdH9pfHVOmc93DpjHuhQ/kP7fSSuqe0OCBGJOf1tBoPz1JPGHc
+2K6SLMME5+pVJTlIP/W7rAkqvDNDP4rH+HAECQof2ilxKUlOWqMTNvmetuaLKyDG
+F9rS8rlJByUgWi16WOfuzhg89XlBrD1cfUHGvszC2G/UCgfp0kZrQ0Z8G0yKLCXe
+iG8OwQIDAQABo4HnMIHkMB0GA1UdDgQWBBSk2CV5I3z+KUkaBLYfJsncC2t5IjCB
+tAYDVR0jBIGsMIGpgBSk2CV5I3z+KUkaBLYfJsncC2t5IqGBjaSBijCBhzELMAkG
+A1UEBhMCREUxDDAKBgNVBAgTA05SVzENMAsGA1UEBxMEQm9ubjEgMB4GA1UEChMX
+U3R1ZGVudGVud2VyayBCb25uIEFvZVIxFDASBgNVBAMTC3N0dy1ib25uLmRlMSMw
+IQYJKoZIhvcNAQkBFhRuZXRhZG1pbkBzdHctYm9ubi5kZYIBADAMBgNVHRMEBTAD
+AQH/MA0GCSqGSIb3DQEBBQUAA4IBAQDKgN26uCR7s/HfcZGOr867D9/jjiWFdt39
+fIVKDe55s3D+xMkP67T30sQjvoZC6R6B0qmlqgObMCyIMU5yiqM0E43tWQujtdfA
+H8j1jcVdEhi7H7PcPrJeb3ovqL0ShnZPrCTa0gx3m6STVv17gmtYAVFfl24JhirU
+LLshfxB8KvO1bzd8XQGTI7xboUMeWQqv77PG68WRQ8CtfJ1WfLVkjoIbL7qhHTa+
+SpEiSFovmqUz7qca5SZl6lFKpi68ZtxIPKGXxq2H3OBrt3phxKiN304dSkR53CQW
+BcacuWtrOR3I52DlpwHrkF+8PzHLymvuQfMOclHYGLepHv5Glwhs
+-----END CERTIFICATE-----
