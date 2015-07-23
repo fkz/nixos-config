@@ -275,17 +275,8 @@ in
           "${pkgs.perl}/bin/perl ${./install-grub.pl} ${grubConfig}");
         bootExec = pkgs.writeText "installboot"
 	     ''
-		${installBoot} $@
-		pushd /home/fabian/debian
-		mkdir -p root root/dev root/proc root/sys root/boot
-		mount /dev/mapper/main-home /home/fabian/debian/root
-		mount /dev/sda1 root/boot
-		for fn in dev proc sys; do
-		   mount --bind /$fn root/$fn
-		done
-		chroot root /usr/bin/env -i PATH=/bin:/sbin:/usr/bin:/usr/sbin update-grub
-		umount root/dev root/proc root/sys root
-		popd
+		${installBoot} $1
+		/home/fabian/update-grub.sh
 	     '';
         in "${pkgs.stdenv.shell} ${bootExec}";
       
