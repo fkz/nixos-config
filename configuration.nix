@@ -25,7 +25,8 @@
 	#104.24.112.38 schmitthenner.eu
 	84.200.8.234 schmitthenner.eu
         84.200.8.234 mail.schmitthenner.eu
-        '';
+	192.168.1.42 icfp
+	'';
 
       boot.loader =
         { grub.enable = false;
@@ -49,13 +50,14 @@
     # };
 
     # List packages installed in system profile. To search by name, run:
-    # -env -qaP | grep wget
+   # -env -qaP | grep wget
     # environment.systemPackages = with pkgs; [
     #   wget ./install-boot
     # ];
 
     system.copySystemConfiguration = true;
 
+    hardware.opengl.driSupport32Bit = true;
     # List services that you want to enable:
 
     # Enable the OpenSSH daemon.
@@ -84,22 +86,21 @@
 
     services.virtualboxHost.enable = true;	
 
-    virtualisation.docker.enable = true;
+    #virtualisation.docker.enable = true;
 
     hardware.pulseaudio.enable = true;
 
     environment.shellAliases = {
       n = "nix-instantiate --eval --expr";
+      # nb = "nix-build --no-out-link '<nixpkgs>'";
     };
 
     environment.systemPackages = 
       with pkgs;
-      let texAggregation =
-            texLiveAggregationFun
-              { paths = [ texLive texLiveExtra texLiveModerncv texLiveModerntimeline texLiveCMSuper ]; }; in 
       [ emacs vim 
         firefoxWrapper 
         thunderbird
+	#sage
         gnupg
         pavucontrol
         darcs
@@ -114,7 +115,7 @@
         emacs24Packages.haskellMode
         # texAggregation
         # (import ./auctex.nix { inherit stdenv fetchurl emacs; texLive = texAggregation; })
-	texAggregation
+	# texAggregation
 	kde4.plasma-nm
         dnsmasq
         hostapd
@@ -125,7 +126,6 @@
         jitsi
         keepassx
         kde4.kuser
-        libreoffice
         lsof
         ncdu
         networkmanagerapplet
@@ -169,7 +169,7 @@
               descriptive = callPackage fabian + /nix-src/descriptive.nix> {};
               web = callPackage (fabian + /haskell-env/web.nix) {};
               cryptoRandomEffect = callPackage (fabian + /nix-src/cryptoRandomEffect.nix) {};
-              x509 = callPackage (fabian + /nix-src/x509.nix) {};
+              # x509 = callPackage (fabian + /nix-src/x509.nix) {};
             };
           });
         webProxy =
@@ -224,7 +224,7 @@
         mydestination = semiwahr.de
         '';
     };
-    networking.firewall.allowedTCPPorts = [ 25 80 443 ];
+    networking.firewall.allowedTCPPorts = [ 25 80 8080 443 ];
     services.nginx = {
         enable = true;
 	config = ''
@@ -233,7 +233,7 @@
 	      server {
 	         listen 80;
 		 location / {
-		     proxy_pass http://10.233.5.2;
+		     root /home/fabian/superschurken/crm/website/material-design-template
 		 }
               }
 	      server {
@@ -252,6 +252,7 @@
       fsType = "ext4";
     };
 
+    # services.mysql.enable = true;
     #  we want to run hydra, so we need postgresql
     services.postgresql.enable = true;
     services.postgresql.package = pkgs.postgresql;
