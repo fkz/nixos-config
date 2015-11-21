@@ -86,7 +86,6 @@
       createHome = true;
     };
 
-    programs.bash.enableCompletion = true;
     services.postfix = {
         enable = true;
         hostname = "semiwahr.de";
@@ -115,7 +114,6 @@
 	   }
 	   '';
          };
-    networking.networkmanager.enable = true;
 
 
     # services.mysql.enable = true;

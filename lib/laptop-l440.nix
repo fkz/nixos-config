@@ -13,4 +13,5 @@
       #  '';
     };
 
+    networking.networkmanager.enable = true;
 }

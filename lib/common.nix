@@ -30,6 +30,7 @@
     services.virtualboxHost.enable = true;	
 
     #virtualisation.docker.enable = true;
+    programs.bash.enableCompletion = true;
 
     hardware.pulseaudio.enable = true;
 
