@@ -9,40 +9,21 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ./custom-grub/grub.nix
-    ];
+      ./system.nix
+      ./studentenwerk.nix
+      ./laptop-l440.nix
+      ./common.nix
+   ];
 
   config = let myConfig = name:
     let normalOr = val:
           if name == "normal" then val else null; in 
     {
   
-      # Use the GRUB 2 boot loader.
-      boot.initrd.luks.devices = 
-        [ { name = "luksRoot"; device = "/dev/sda5";
-            preLVM = true; } ];
-      networking.extraHosts = 
-        ''
-	#104.24.112.38 schmitthenner.eu
-	84.200.8.234 schmitthenner.eu
-        84.200.8.234 mail.schmitthenner.eu
-	192.168.1.42 icfp
-	'';
 
-      boot.loader =
-        { grub.enable = false;
-          custom-grub = {
-            enable = true;
-            version = 2;
-            # Define on which hard drive you want to install Grub.
-            device = "nodev";
-            copyKernels = true;
-          };
-        };
 
     networking.hostName = "nixos"; # Define your hostname.
-    #networking.wireless.enable = true;  # Enables wireless.
 
-    # Select internationalisation properties.
     # i18n = {
     #   consoleFont = "lat9w-16";
     #   consoleKeyMap = "us";
@@ -55,99 +36,7 @@
     #   wget ./install-boot
     # ];
 
-    system.copySystemConfiguration = true;
-
-    hardware.opengl.driSupport32Bit = true;
-    # List services that you want to enable:
-
-    # Enable the OpenSSH daemon.
-    services.openssh.enable = true;
-
-    # Enable CUPS to print documents.
-    services.printing.enable = true;
-
-    # Enable the X11 windowing system.
-    services.xserver.enable = true;
-    services.xserver.layout = "us";
-    services.xserver.xkbOptions = "eurosign:e";
-
-    # Enable the KDE Desktop Environment.
-    services.xserver.displayManager.kdm.enable = true;
-    services.xserver.desktopManager.kde4.enable = true;
-
-    services.xserver.synaptics = {
-      enable = true;
-      twoFingerScroll = true;
-      #additionalOptions = 
-      #  ''
-      #  Option "SoftButtonAreas" "60% 0 0 0 40% 60% 0 0"
-      #  '';
-    };
-
-    services.virtualboxHost.enable = true;	
-
-    #virtualisation.docker.enable = true;
-
-    hardware.pulseaudio.enable = true;
-
-    environment.shellAliases = {
-      n = "nix-instantiate --eval --expr";
-      # nb = "nix-build --no-out-link '<nixpkgs>'";
-    };
-
-    environment.systemPackages = 
-      with pkgs;
-      [ emacs vim 
-        firefoxWrapper 
-        thunderbird
-	#sage
-        gnupg
-        pavucontrol
-        darcs
-        evince
-        xfce.xfce4_power_manager
-        psmisc
-        networkmanager
-        networkmanagerapplet
-        wireshark
-        vlc
-        dhcpcd
-        emacs24Packages.haskellMode
-        # texAggregation
-        # (import ./auctex.nix { inherit stdenv fetchurl emacs; texLive = texAggregation; })
-	# texAggregation
-	kde4.plasma-nm
-        dnsmasq
-        hostapd
-        bridge_utils
-        ed
-        git
-        inetutils
-        jitsi
-        keepassx
-        kde4.kuser
-        lsof
-        ncdu
-        networkmanagerapplet
-        nmap
-        unzip
-        wget
-        xlibs.xev
-        htop
-        chromium
-        kde4.kdevelop
-        # (import /home/fabian/src/kdev-haskell)
-      ];
-
-    nixpkgs.config =  {
-      allowUnfree = true;
-      firefox = {
-        enableAdobeFlash = true;
-      };
-      chromium = {
-        enablePepperFlash = true;
-      };        	     
-
+   nixpkgs.config = {
       packageOverrides = pkgsOld : {
         # wpa_supplicant = pkgsOld.lib.overrideDerivation pkgsOld.wpa_supplicant (attrs: {
         #   extraConfig = attrs.extraConfig + ''
@@ -198,25 +87,6 @@
     };
 
     programs.bash.enableCompletion = true;
-    services.openvpn.servers.${normalOr "studentenwerkBonn"} = { 
-      config = ''
-        remote vpn.stw-bonn.de 1194 udp
-        dev tun0
-        persist-tun
-        persist-key
-        ca ${./ca--bonn.crt}
-        remote-random
-        resolv-retry infinite
-        tls-remote vpn.stw-bonn.de
-        auth-user-pass ${./openvpn-auth}
-        #auth-user-pass
-        client
-        nobind
-        pull
-        verb 4
-        redirect-gateway def1
-        '';
-    };
     services.postfix = {
         enable = true;
         hostname = "semiwahr.de";
@@ -247,10 +117,6 @@
          };
     networking.networkmanager.enable = true;
 
-    fileSystems."/home/fabian/old-fabian" =
-    { device = "/dev/mapper/main-root";
-      fsType = "ext4";
-    };
 
     # services.mysql.enable = true;
     #  we want to run hydra, so we need postgresql
