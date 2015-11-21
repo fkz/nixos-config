@@ -8,7 +8,10 @@
         84.200.8.234 mail.schmitthenner.eu
 	192.168.1.42 icfp
 	'';
-    system.copySystemConfiguration = true;
+	
+    # copySystemConfiguration doesn't work when it's in fact a directory
+    # this option is broken anyway, see also nixpkgs issue 7974
+    system.copySystemConfiguration = false;
 
 
     # Enable the OpenSSH daemon.
