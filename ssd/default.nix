@@ -6,7 +6,7 @@
 
 {
   imports =
-    [ # Include the results of the hardware scan.
+    [ ./hardware-configuration.nix
       ./lib/standard-programs.nix
       ./lib/laptop-l440.nix
       ./lib/common.nix
