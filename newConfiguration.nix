@@ -7,11 +7,10 @@
 {
   imports =
     [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-      ./standard-programs.nix
-      ./standard-config/laptop-l440.nix
-      ./standard-config/common.nix
-      ./standard-config/studentenwerk.nix
+      ./lib/standard-programs.nix
+      ./lib/laptop-l440.nix
+      ./lib/common.nix
+      ./lib/studentenwerk
     ];
 
   # Use the GRUB 2 boot loader.
