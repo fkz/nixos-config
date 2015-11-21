@@ -11,6 +11,7 @@
       ./lib/laptop-l440.nix
       ./lib/common.nix
       ./lib/studentenwerk
+      ../original/mount.nix
     ];
 
   # Use the GRUB 2 boot loader.
