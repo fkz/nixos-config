@@ -5,7 +5,8 @@
     (pkgs.writeScriptBin "mountFilesystem" ''
       #!${pkgs.bash}/bin/bash
       ${pkgs.cryptsetup}/bin/cryptsetup luksOpen /dev/sdb5 OldEncrypted
-      mount /unpure /dev/main-DebianTesting
+      ${pkgs.deviceMapper}/bin/lvm vgchange -ay main
+      ${pkgs.eject}/bin/mount /dev/main/DebianTesting /unpure
       '')
     ];
 }
