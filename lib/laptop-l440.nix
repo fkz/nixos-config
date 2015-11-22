@@ -12,6 +12,4 @@
       #  Option "SoftButtonAreas" "60% 0 0 0 40% 60% 0 0"
       #  '';
     };
-
-    networking.networkmanager.enable = true;
 }

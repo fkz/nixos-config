@@ -1,18 +1,7 @@
 { pkgs, ... }:
 
 {
-  networking.extraHosts = 
-        ''
-	#104.24.112.38 schmitthenner.eu
-	84.200.8.234 schmitthenner.eu
-        84.200.8.234 mail.schmitthenner.eu
-	192.168.1.42 icfp
-	'';
-	
-    # copySystemConfiguration doesn't work when it's in fact a directory
-    # this option is broken anyway, see also nixpkgs issue 7974
-    system.copySystemConfiguration = false;
-
+  imports = [ ./network.nix ./desktop.nix ];
 
     # Enable the OpenSSH daemon.
     services.openssh.enable = true;
@@ -20,19 +9,9 @@
     # Enable CUPS to print documents.
     services.printing.enable = true;
 
-    # Enable the X11 windowing system.
-    services.xserver.enable = true;
-    services.xserver.layout = "us";
-    services.xserver.xkbOptions = "eurosign:e";
-
-    # Enable the KDE Desktop Environment.
-    services.xserver.displayManager.kdm.enable = true;
-    services.xserver.desktopManager.kde4.enable = true;
-
-
-    services.virtualboxHost.enable = true;	
-
+    #services.virtualboxHost.enable = true;
     #virtualisation.docker.enable = true;
+
     programs.bash.enableCompletion = true;
 
     hardware.pulseaudio.enable = true;
@@ -54,9 +33,6 @@
         evince
         xfce.xfce4_power_manager
         psmisc
-        networkmanager
-        networkmanagerapplet
-        wireshark
         vlc
         dhcpcd
         emacs24Packages.haskellMode
@@ -64,8 +40,6 @@
         # (import ./auctex.nix { inherit stdenv fetchurl emacs; texLive = texAggregation; })
 	# texAggregation
 	kde4.plasma-nm
-        dnsmasq
-        hostapd
         bridge_utils
         ed
         git
@@ -77,7 +51,8 @@
         ncdu
         networkmanagerapplet
         nmap
-        unzip
+        unzip    #virtualisation.docker.enable = true;
+
         wget
         xlibs.xev
         htop

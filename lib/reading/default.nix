@@ -2,6 +2,9 @@
 
 {
   environment.systemPackages = [
-    pkgs.calibre pkgs.spideroak
+    # TODO: bundle DRM plugin
+    pkgs.calibre
+    
+    # TODO: somehow manage the books
   ];
 }
