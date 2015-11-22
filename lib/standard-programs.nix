@@ -9,7 +9,7 @@ let nixosscripts =
     installPhase = ''
       mkdir -p $out/bin
       cp -R ./* $out
-      ln -s $out/nix-scripts $out/bin/nix-scripts
+      ln -s $out/nix-script $out/bin
       '';
     }; in
 {
