@@ -6,10 +6,9 @@ let nixosscripts =
       url = "https://github.com/matthiasbeyer/nixos-scripts/archive/master.tar.gz";
       sha256 = "0w9zbgwb0q4wk7ks7rdjsnh34lmmfsv045c01yjnchpw8yclj75l";
     };
-    makePhase = "";
     installPhase = ''
       mkdir -p $out/bin
-      cp -R $src $out
+      cp -R ./* $out
       ln -s $out/nix-scripts $out/bin/nix-scripts
       '';
     }; in
