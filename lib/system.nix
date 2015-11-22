@@ -1,6 +1,5 @@
 { pkgs, ... }:
 {
-
   boot.initrd.luks.devices = 
         [ { name = "luksRoot"; device = "/dev/sda5";
             preLVM = true; } ];
