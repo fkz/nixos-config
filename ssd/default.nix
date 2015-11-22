@@ -14,6 +14,15 @@
       ../original/mount.nix
     ];
 
+  environment.systemPackages = 
+    let program = ''
+      #!${pkgs.bash}/bin/bash
+      pushd /etc/nixos/standard-config
+      git fetch local
+      git checkout local/master
+      ${config.system.build.nixos-rebuild}/bin/nixos-rebuild "$@"
+      ''; in [ (pkgs.writeScriptBin "nixos" program) ]; 
+    
   # Use the GRUB 2 boot loader.
   boot.loader.grub.enable = true;
   boot.loader.grub.version = 2;
