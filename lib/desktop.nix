@@ -7,5 +7,5 @@
 
   # Enable the KDE Desktop Environment.
   services.xserver.displayManager.kdm.enable = true;
-  services.xserver.desktopManager.kde4.enable = true;
+  services.xserver.desktopManager.kde5.enable = true;
 }
