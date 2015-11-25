@@ -12,7 +12,18 @@ let nixosscripts =
       cp -R ./* $out
       ln -s $out/nix-script $out/bin
       '';
-    }; in
+    }; 
+    nix-exec = 
+      pkgs.writeScriptBin "nix-exec" ''
+	#!${pkgs.perl}/bin/perl
+	my $attr = $ARGV[0];
+	open(PATH, "nix-build --no-out-link $attr '<nixpkgs>' |";
+	my $path = <PATH>;
+	close(PATH);
+	opendir (my $dh, dir($path, 'bin'));
+	my @files = readdir <BIN>;
+	'';    
+    in
 {
   imports = [./reading];
   
@@ -24,6 +35,7 @@ let nixosscripts =
     which
     kde4.kdevelop
     nixosscripts
+    nix-exec
   ];
   
   nixpkgs.config.packageOverrides = oldPkgs: {

@@ -11,7 +11,16 @@
   #virtualisation.docker.enable = true;
 
   programs.bash.enableCompletion = true;
-
+  programs.bash.promptInit = ''
+    PROMPT_COLOR="1;31m"
+    let $UID && PROMPT_COLOR="1;32m"
+    user=
+    if [ $UID != 1000 ] && [ $UID != 0 ] ; then 
+      user="\u"
+    fi
+    PS1="\[\033[$PROMPT_COLOR\]$user\w \[\033[0m\]"
+    '';
+  
   hardware.pulseaudio.enable = true;
 
   environment.shellAliases = {
