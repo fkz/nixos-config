@@ -16,7 +16,7 @@
     let $UID && PROMPT_COLOR="1;32m"
     user=
     if [ $UID != 1000 ] && [ $UID != 0 ] ; then 
-      user="\u"
+      user="\u@"
     fi
     PS1="\[\033[$PROMPT_COLOR\]$user\w \[\033[0m\]"
     '';
@@ -53,7 +53,7 @@
       inetutils
       jitsi
       keepassx
-      kde5.kuser
+      #kde5.kuser
       lsof
       ncdu
       networkmanagerapplet
