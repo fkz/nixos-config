@@ -10,6 +10,7 @@ in {
       default = [];
       example = [ "<Multi_key> <a> <e>  : \"ä\"" ];
       type = types.listOf types.str;
+      description = "add custom compose combinations";
     };
   };
   config = mkIf (config.X11.compose != []) {
