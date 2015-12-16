@@ -13,8 +13,8 @@ in {
       description = "add custom compose combinations";
     };
   };
-  config = mkIf (config.X11.compose != []) {
-    environment.shellInit = ''
+  config = {
+    environment.shellInit = mkIf (config.X11.compose != []) ''
       export XCOMPOSEFILE=${composefile}
     '';
   };
