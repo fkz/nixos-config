@@ -1,5 +1,5 @@
 { pkgs, ... }: {
-  imports = [ ./network.nix ./desktop.nix ];
+  imports = [ ./network.nix ./desktop.nix ./compose.nix ];
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
@@ -53,7 +53,7 @@
       inetutils
       jitsi
       keepassx
-      #kde5.kuser
+      kde5.kuser
       lsof
       ncdu
       networkmanagerapplet
@@ -67,6 +67,10 @@
       #kde5.kdevelop
       # (import /home/fabian/src/kdev-haskell)
     ];
+
+  X11.compose = [
+    "<Multi_key> <a> <e>  : \"ä\""
+  ];
 
   nixpkgs.config =  {
     allowUnfree = true;
