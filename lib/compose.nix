@@ -6,7 +6,7 @@ let composefile = pkgs.writeText "xcomposefile" ''
     '';
 in {
   options = {
-    X11.compose = {
+    X11.compose = mkOption {
       default = [];
       example = [ "<Multi_key> <a> <e>  : \"ä\"" ];
       type = types.listOf types.str;
