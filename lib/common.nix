@@ -53,7 +53,7 @@
       inetutils
       jitsi
       keepassx
-      kde5.kuser
+      kde4.kuser
       lsof
       ncdu
       networkmanagerapplet
