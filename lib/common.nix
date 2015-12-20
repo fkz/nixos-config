@@ -68,6 +68,10 @@
       # (import /home/fabian/src/kdev-haskell)
     ];
 
+  services.printing = {
+    enable = true;
+  };
+
   X11.compose = [
     "<Multi_key> <a> <e>  : \"ä\""
   ];
