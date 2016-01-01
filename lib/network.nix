@@ -6,7 +6,7 @@
     '';
   
   networking.firewall = {
-    enable = true;
+    enable = false;
     allowPing = true;
   };
   
