@@ -10,15 +10,15 @@
     allowPing = true;
   };
   
-  networking.networkmanager = {
-    enable = true;
-    networks = {
-      base = {
-        ssid = "Hallo";
-        password = "12345678";
-      };
-    };
-  };
+#  networking.networkmanager = {
+#    enable = true;
+#    networks = {
+#      base = {
+#        ssid = "Hallo";
+#        password = "12345678";
+#      };
+#    };
+#  };
   
   environment.systemPackages = with pkgs; [
     # some useful programs

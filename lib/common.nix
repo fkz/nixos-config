@@ -70,6 +70,8 @@
 
   X11.compose = [
     "<Multi_key> <a> <e>  : \"ä\""
+    "<Multi_key> <a> <u>  : \"ü\""
+    "<Multi_key> <a> <o>  : \"ö\""
   ];
 
   nixpkgs.config =  {
