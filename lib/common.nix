@@ -1,5 +1,5 @@
 { pkgs, ... }: {
-  imports = [ ./network.nix ./desktop.nix ./compose.nix ];
+  imports = [ ./network.nix ./desktop.nix ./compose.nix ./antiprocrastination.nix ];
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
