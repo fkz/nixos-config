@@ -33,7 +33,8 @@ let nixosscripts =
     emacs
     vim
     which
-    kde4.kdevelop
+    # remove in favor of kde5's kdevelop 
+    # kde4.kdevelop
     nixosscripts
     nix-exec
   ];
