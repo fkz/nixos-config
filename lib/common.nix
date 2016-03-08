@@ -80,7 +80,7 @@
       #enableAdobeFlash = true;
     };
     chromium = {
-      #enablePepperFlash = true;
+      enablePepperFlash = true;
     };        	     
   };
 }
