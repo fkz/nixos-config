@@ -3,8 +3,8 @@
 { pkgs, lib, ... }:
 
 let forbidden = [
-  "gorillavid.in"
-  "thewatchseries.to"
+  #"gorillavid.in"
+  #"thewatchseries.to"
   "vidzi.tv"
   "kinox.to"
   "movie4u.org"
