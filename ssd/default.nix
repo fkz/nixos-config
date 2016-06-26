@@ -37,6 +37,6 @@
       uid = 1000;
       createHome = true;
       home = "/home/fabian";
-      shell = "${pkgs.zsh}/bin/zsh";
+      # shell = "${pkgs.zsh}/bin/zsh";
     };
 }
