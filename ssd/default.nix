@@ -31,12 +31,12 @@
   system.stateVersion = "15.09";
 
   users.extraUsers.fabian = {
+      isNormalUser = true;
       name = "fabian";
       group = "users";
       extraGroups = [ "networkmanager" ];
       uid = 1000;
       createHome = true;
       home = "/home/fabian";
-      # shell = "${pkgs.zsh}/bin/zsh";
     };
 }
