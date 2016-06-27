@@ -24,7 +24,7 @@
       base3 = {
         ssid = "";
         password = "";
-        section.connection = ''
+        sections.connection = ''
           permissions=user:fabian:;
         '';
       };
