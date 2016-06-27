@@ -4,12 +4,12 @@
     84.200.8.234 mail.schmitthenner.eu
     192.168.1.42 icfp
     '';
-  
+
   networking.firewall = {
     enable = false;
     allowPing = true;
   };
-  
+
   networking.networkmanager = {
     enable = true;
     networks = {
@@ -21,19 +21,26 @@
         ssid = "test_nixos";
         password = "2398yedh";
       };
+      base3 = {
+        ssid = "";
+        password = "";
+        section.connection = ''
+          permissions=user:fabian:;
+        '';
+      }
     };
   };
-  
+
   environment.systemPackages = with pkgs; [
     # some useful programs
-    
+
     # make dns requests
     bind
-    
+
     # be able to make local wifi's
     dnsmasq
     hostapd
-    
+
     # generally handle connections by network manager
     networkmanager
     networkmanagerapplet
