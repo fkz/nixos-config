@@ -17,6 +17,10 @@
         ssid = "Hallo";
         password = "12345678";
       };
+      base2 = {
+        ssid = "test_nixos";
+        password = "2398yedh";
+      };
     };
   };
   
