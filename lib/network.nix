@@ -12,12 +12,12 @@
   
   networking.networkmanager = {
     enable = true;
-#    networks = {
-#      base = {
-#        ssid = "Hallo";
-#        password = "12345678";
-#      };
-#    };
+    networks = {
+      base = {
+        ssid = "Hallo";
+        password = "12345678";
+      };
+    };
   };
   
   environment.systemPackages = with pkgs; [
