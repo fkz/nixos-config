@@ -27,7 +27,7 @@
         section.connection = ''
           permissions=user:fabian:;
         '';
-      }
+      };
     };
   };
 
