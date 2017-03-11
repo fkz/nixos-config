@@ -68,6 +68,7 @@
       # (import /home/fabian/src/kdev-haskell)
 
       digikam
+      kdevelop
     ];
 
   X11.compose = [
