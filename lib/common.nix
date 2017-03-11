@@ -42,7 +42,7 @@
       psmisc
       vlc
       dhcpcd
-      emacs24Packages.haskellMode
+      # emacs24Packages.haskellMode
       # texAggregation
       # (import ./auctex.nix { inherit stdenv fetchurl emacs; texLive = texAggregation; })
       # texAggregation
