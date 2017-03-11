@@ -46,7 +46,7 @@
       # texAggregation
       # (import ./auctex.nix { inherit stdenv fetchurl emacs; texLive = texAggregation; })
       # texAggregation
-      kde5.plasma-nm
+      # kde5.plasma-nm
       bridge_utils
       ed
       git
