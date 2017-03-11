@@ -66,6 +66,8 @@
       chromium
       #kde5.kdevelop
       # (import /home/fabian/src/kdev-haskell)
+
+      digikam
     ];
 
   X11.compose = [
