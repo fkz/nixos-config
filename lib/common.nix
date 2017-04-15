@@ -21,7 +21,10 @@
     PS1="\[\033[$PROMPT_COLOR\]$user\w \[\033[0m\]"
     '';
   
-  hardware.pulseaudio.enable = true;
+  hardware = {
+    pulseaudio.enable = true;
+    bluetooth.enable = true;
+  };
 
   environment.shellAliases = {
     n = "nix-instantiate --eval --expr";
