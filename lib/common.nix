@@ -23,6 +23,7 @@
   
   hardware = {
     pulseaudio.enable = true;
+    pulseaudio.package = pkgs.pulseaudioFull;
     bluetooth.enable = true;
   };
 
