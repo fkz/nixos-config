@@ -29,7 +29,9 @@
   boot.loader.grub.device = "/dev/sda";
 
   system.stateVersion = "15.09";
-
+  
+  services.postfix.enable = true;
+  
   users.extraUsers.fabian = {
       isNormalUser = true;
       name = "fabian";
